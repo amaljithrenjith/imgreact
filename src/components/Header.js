@@ -1,4 +1,7 @@
 import React from 'react'
+import { world } from "../dummy"
+
+
 
 const header = () => {
   return (
@@ -8,6 +11,21 @@ const header = () => {
       <img src={require('../Images/disaster1.jpg')} alt="" />
       <img src={require('../Images/sports.jpg').default} alt="" />
       <img src={require('../Images/sports.jpg')}  alt="" />
+
+      { world.map(val =>{
+        return(
+          <div key={val.id}>
+            <img src={val.cover} alt='' />
+
+            <div>
+
+            <h1>{val.title}</h1>
+
+            </div>
+          </div>
+        )
+      }
+      )}
 
 
     </div>
